@@ -42,8 +42,6 @@ namespace paintClone
 
     class Area : DrawingArea {
         private double zoomLevel = 1.0; // Default zoom level
-        private Stack<ImageSurface> undoStack = new Stack<ImageSurface>();
-        private Stack<ImageSurface> redoStack = new Stack<ImageSurface>();
         ImageSurface canvas = new ImageSurface(Format.Argb32, 1152, 648);
 
         public bool isMousePenPressed = false;
@@ -105,52 +103,12 @@ namespace paintClone
             QueueDraw();
         }
 
-        public void SaveStateForUndo() {
-            // Create a copy of the current surface
-            ImageSurface copy = new ImageSurface(Format.Argb32, canvas.Width, canvas.Height);
-            using (Context cr = new Context(copy)) {
-                cr.SetSourceSurface(canvas, 0, 0);
-                cr.Paint();
-            }
-            undoStack.Push(copy);
-            redoStack.Clear();
-        }
-
-        private ImageSurface CopySurface(ImageSurface original) {
-            ImageSurface copy = new ImageSurface(Format.Argb32, original.Width, original.Height);
-            using (Context cr = new Context(copy)) {
-                cr.SetSourceSurface(original, 0, 0);
-                cr.Paint();
-            }
-            return copy;
-        }
-
         public void Undo() {
-            if (undoStack.Count > 0) {
-                // Save the current state for redo
-                redoStack.Push(CopySurface(canvas));
-                // Restore the previous state
-                canvas = undoStack.Pop();
-            }
+
         }
 
         public void Redo() {
-            if (redoStack.Count > 0) {
-                // Save the current state for undo
-                undoStack.Push(CopySurface(canvas));
-                // Restore the next state
-                canvas = redoStack.Pop();
-            }
-        }
 
-            // Public method to get the count of undo actions available
-        public int UndoCount() {
-            return undoStack.Count;
-        }
-
-        // Public method to get the count of redo actions available
-        public int RedoCount() {
-            return redoStack.Count;
         }
 
         public void SetSourceColor(double red = 0, double green = 0, double blue = 0, double alpha = 1) {
@@ -337,11 +295,4 @@ namespace paintClone
         }
     }
 }
-
-
-
-
-
-
-
 

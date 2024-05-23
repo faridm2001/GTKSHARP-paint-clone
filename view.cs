@@ -175,25 +175,11 @@ namespace paintClone
 
     void on_undo(object? sender, EventArgs args) {
         area.Undo();
-        RefreshCanvas();  // Implement this to redraw the canvas if needed
-        UpdateUI(); 
     }
 
     void on_redo(object? sender, EventArgs args) {
-            area.Redo();
-        RefreshCanvas();
-        UpdateUI();
+        area.Redo();
     }
-
-    void UpdateUI() {
-    undoItem.Sensitive = area.UndoCount() > 0;
-    redoItem.Sensitive = area.RedoCount() > 0;
-}
-
-void RefreshCanvas() {
-    // Redraw the area or trigger a re-render as needed
-    area.QueueDraw();
-}
 
     void on_about(object? sender, EventArgs args) {
          OpenUrl("https://github.com/faridm2001/sumsemester2024renamed/blob/main/README.md");

@@ -7,12 +7,12 @@ using Gtk;
 using Point = Gdk.Point;
 
 namespace paintClone {
-    class Run {
-    static void Main() {
-        Application.Init();
-        MyWindow w = new MyWindow();
-        w.ShowAll();
-        Application.Run();
+        class Run {
+        static void Main() {
+            Application.Init();
+            MyWindow w = new MyWindow();
+            w.ShowAll();
+            Application.Run();
+        }
     }
-}
 }
