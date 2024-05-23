@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "cFO+DmukCskGw75MhuzNgGVUYe9bnYAoqU8QHveII3zwNaXhACC5N5l8RQN5xOslLfWBhWneTSk0nFsDzCBprQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\sem_proj.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\farid\\.nuget\\packages\\atksharp\\3.24.24.95\\atksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\cairosharp\\3.24.24.95\\cairosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\gdksharp\\3.24.24.95\\gdksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\giosharp\\3.24.24.95\\giosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\glibsharp\\3.24.24.95\\glibsharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\gtksharp\\3.24.24.95\\gtksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\gtksourcesharp\\3.24.24.95\\gtksourcesharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\pangosharp\\3.24.24.95\\pangosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\system.drawing.common\\8.0.5\\system.drawing.common.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
