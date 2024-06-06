@@ -1,9 +1,9 @@
 # To Build
 
 Download the whole repository
-- main.cs is the program runner
-- program.cs is the application
-- view.cs is responsible for the GUI
+1. main.cs is the program runner
+2. program.cs is the application
+3. view.cs is responsible for the GUI
 
 # PaintClone Documentation
 
