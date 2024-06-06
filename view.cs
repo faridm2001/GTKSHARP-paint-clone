@@ -1,3 +1,11 @@
+
+// ##############################################################################
+//
+//   This is the main file responsible for viewing the program
+//
+// ###############################################################################
+
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -6,19 +14,26 @@ using Gdk;
 using Gtk;
 using Point = Gdk.Point;
 
+
 namespace paintClone
 {
-  class MyWindow : Gtk.Window {
-    MenuItem undoItem, redoItem;
 
+  //class responsible for viewing gtk window methods
+  class MyWindow : Gtk.Window {
+
+    //getting widgets objects set
+    MenuItem undoItem, redoItem;
     ColorButton colorButton;
     ComboBox lineWeight;
     Toolbar toolbar = new Toolbar();
     Entry canvasHeight = new Entry();
     Entry canvasWidth = new Entry();
 
+    //getting the canvas widget set
     Area area = new Area();
     bool toggling;
+
+    //Set up the program window
     public MyWindow() : base("Painting Program") {
         DeleteEvent += delegate { Application.Quit(); };
 
@@ -82,6 +97,7 @@ namespace paintClone
         toolbar.Add(colorButtonContainer);
         toolbar.Add(new SeparatorToolItem());
 
+        //Set line wieght
         lineWeight = new ComboBox(
             new string[] {
                 "3 px",
@@ -142,6 +158,8 @@ namespace paintClone
         // Add the vertical box container to the window
         Add(vbox);
     }
+
+    //The following methods are responsible to communicate with the program.cs and the canvas methods
 
     static MenuItem item(string name, EventHandler handler) {
         MenuItem i = new MenuItem(name);

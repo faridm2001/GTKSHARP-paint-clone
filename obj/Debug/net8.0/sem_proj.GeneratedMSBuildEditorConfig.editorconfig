@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = sem_proj
-build_property.ProjectDir = C:\Users\farid\Desktop\University\Programming\sem_proj\
+build_property.ProjectDir = c:\Users\farid\Documents\GitHub\GTKSHARP-paint-clone\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

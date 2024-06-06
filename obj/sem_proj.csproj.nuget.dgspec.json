@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\sem_proj.csproj": {}
+    "C:\\Users\\farid\\Documents\\GitHub\\GTKSHARP-paint-clone\\sem_proj.csproj": {}
   },
   "projects": {
-    "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\sem_proj.csproj": {
+    "C:\\Users\\farid\\Documents\\GitHub\\GTKSHARP-paint-clone\\sem_proj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\sem_proj.csproj",
+        "projectUniqueName": "C:\\Users\\farid\\Documents\\GitHub\\GTKSHARP-paint-clone\\sem_proj.csproj",
         "projectName": "sem_proj",
-        "projectPath": "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\sem_proj.csproj",
+        "projectPath": "C:\\Users\\farid\\Documents\\GitHub\\GTKSHARP-paint-clone\\sem_proj.csproj",
         "packagesPath": "C:\\Users\\farid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\obj\\",
+        "outputPath": "C:\\Users\\farid\\Documents\\GitHub\\GTKSHARP-paint-clone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\farid\\AppData\\Roaming\\NuGet\\NuGet.Config"

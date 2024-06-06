@@ -1,4 +1,19 @@
-﻿using System;
+﻿
+// ##############################################################################
+//
+//   This file is responsible for the control part of the code
+//   Two main parts 
+//      - Struct Cairocolor: Responsible for setting the colors
+//
+//      - Class Area: responsible for controlling the program with multiple tools
+//          - canvas setup
+//          - Tools setup and mechanism
+//          - Canvas modification 
+//
+// ###############################################################################
+
+
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Cairo;
@@ -6,12 +21,13 @@ using Gdk;
 using Gtk;
 using Point = Gdk.Point;
 
-
+//for program partition
 namespace paintClone
 {
-        
+    //the tools currently present in the program   
     enum Tool { Pen, Eraser, Bucket, Line, Square, Circle, Triangle };
 
+    //struct to modify colors
     struct CairoColor {
         public double Red { get; set; }
         public double Green { get; set; }
@@ -40,7 +56,10 @@ namespace paintClone
         }
     }
 
+    //The most important class where all the program gets its commands from
     class Area : DrawingArea {
+
+        //The following variables  are used to set up the canvas 
         private double zoomLevel = 1.0; // Default zoom level
         ImageSurface canvas = new ImageSurface(Format.Argb32, 1152, 648);
 
@@ -52,6 +71,7 @@ namespace paintClone
         double red_, green_, blue_, alpha_;
         public Tool tool = Tool.Pen;
 
+        //the following method sets the canvas with a white background and a default canvas size
         public Area() {
             AddEvents((int)EventMask.ButtonPressMask);
             AddEvents((int)EventMask.PointerMotionMask);
@@ -67,6 +87,7 @@ namespace paintClone
             }
         }
 
+        //this method changes the canvas size when called
         public void setCanvasSize(int w, int h ) {
             ImageSurface newCanvas = new ImageSurface(Format.Argb32, w, h);
             using (Context cr = new Context(newCanvas))
@@ -79,11 +100,13 @@ namespace paintClone
             QueueDraw();
         }
 
+        //change canvas view size (zoom) when called
         public void SetZoom(double zoom) {
             zoomLevel = zoom;
             QueueDraw(); // Redraw the area with the new zoom level
         }
 
+        //Deletes everything on the canvas
         public void clear() {
             canvas = new ImageSurface(Format.Argb32, 1152, 648);
             using (Cairo.Context ctx = new Cairo.Context(canvas)) {
@@ -93,6 +116,7 @@ namespace paintClone
             QueueDraw();
         }
 
+        //Opens an image on the canvas
         public void openImage(string filename) {
             using (ImageSurface newSurface = new ImageSurface(filename)) {
                 using (Context ctx = new Context(canvas)) {
@@ -103,13 +127,16 @@ namespace paintClone
             QueueDraw();
         }
 
+        //Under construction
         public void Undo() {
-
+            //coming soon..
         }
 
         public void Redo() {
-
+            //coming soon..
         }
+
+        //the following methods are responsible for the tools Functions 
 
         public void SetSourceColor(double red = 0, double green = 0, double blue = 0, double alpha = 1) {
             red_ = red;
@@ -121,6 +148,7 @@ namespace paintClone
         public void SetLineWeight(int l) {
             lineWeight = l;
         }
+
 
         void DrawBrush(double x, double y) {
             using (Cairo.Context ctx = new Cairo.Context(canvas)) {
@@ -142,10 +170,13 @@ namespace paintClone
             QueueDrawArea((int)x - 3, (int)y - 3, lineWeight, lineWeight);
         }
 
+
+        //The method responsible for switiching between tools and calling the tools functionality
+
         protected override bool OnButtonPressEvent(EventButton e) {
             using (Context c = new Context(canvas)) {
-                c.SetSourceRGB(red_, green_, blue_);    // black
-                c.LineWidth = lineWeight;
+                c.SetSourceRGB(red_, green_, blue_);    // set the pen color to black
+                c.LineWidth = lineWeight;               //set the line width
                 switch (tool) {
                     case Tool.Pen:
                         isMousePenPressed = true;
@@ -231,6 +262,7 @@ namespace paintClone
             }
             return false;
         }
+
 
         private void BucketFill(int x, int y, CairoColor fillColor) {
             var surface = canvas;

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cFO+DmukCskGw75MhuzNgGVUYe9bnYAoqU8QHveII3zwNaXhACC5N5l8RQN5xOslLfWBhWneTSk0nFsDzCBprQ==",
+  "dgSpecHash": "D+WK4QGIVCDBfK3t8jIGy9+Qv/Gg+jWClC2rk0y6UP1fQNu3lbkObWC9Xuchqp0PIu58MArKJwDZtw7Fc4SeTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\farid\\Desktop\\University\\Programming\\sem_proj\\sem_proj.csproj",
+  "projectFilePath": "C:\\Users\\farid\\Documents\\GitHub\\GTKSHARP-paint-clone\\sem_proj.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\farid\\.nuget\\packages\\atksharp\\3.24.24.95\\atksharp.3.24.24.95.nupkg.sha512",
     "C:\\Users\\farid\\.nuget\\packages\\cairosharp\\3.24.24.95\\cairosharp.3.24.24.95.nupkg.sha512",
